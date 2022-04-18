@@ -1,0 +1,48 @@
+@import 'libs/bootstrap-reboot.min';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+@import 'libs/fonts';
+
+* {
+    position: initial;
+    padding: 0;
+    margin: 0;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+}
+
+.container {
+    position: relative;    
+    max-width: 1109px;
+    margin: 0 auto;    
+}
+
+
+:root {
+    //colors
+    --color-black: #000;
+    --color-white: #fff;
+    --color-main: #532072;
+    --color-secondary: #B81F6F;
+}
+
+a {
+    color: var(--color-main);
+    &:hover {
+        text-decoration: none;
+        color: var(--color-secondary);
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+
+@import 'blocks/policy';
+@import 'blocks/header';
+@import 'blocks/slider';
+
+
+@import 'blocks/pageup';
+@import 'blocks/media';
