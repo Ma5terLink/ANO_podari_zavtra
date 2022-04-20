@@ -8,7 +8,7 @@
     position: absolute;
     display: flex;
     top: 2px;
-    right: 257px;
+    right: 282px;
     &__item {
         width: 40px;
         height: 40px;
@@ -23,7 +23,7 @@
 .logo {
     position: absolute;
     top: 5px;
-    left: 30px;
+    left: 5px;
     img {
         height: 150px;
     }
@@ -33,12 +33,12 @@
     width: 498px;
     height: 133px;
     top: 33px;
-    left: 250px;
+    left: 215px;
     font-size: 16px;
     opacity: 0.8;
     &__name {
         font-size: 14px;
-        color: var(--color-main);
+        color: var(--color-grey);
     }
     &__address {
         position: absolute;
@@ -46,7 +46,7 @@
         left: 15px;
         font-style: italic;
         font-size: 12px;
-        color: var(--color-secondary);
+        color: var(--color-grey);
         &:before {
             content: '';
             background: url("../../icons/place.svg") no-repeat;
