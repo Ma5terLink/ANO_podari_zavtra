@@ -25,7 +25,7 @@ p {line-height:1.4; margin-bottom:12px}
 }
 #slideleft {
     z-index: 10;
-    background: url('../../icons/arrow-prev-circle.svg') no-repeat;
+    background: url('../../assets/icons/arrow-prev-circle.svg') no-repeat;
     position: absolute;
     top: 270px;
     left: 20px;
@@ -33,7 +33,7 @@ p {line-height:1.4; margin-bottom:12px}
 // #slideleft:hover {background-position:-0px -185px}
 #slideright {
     z-index: 10;
-    background:url('../../icons/arrow-next-circle.svg') no-repeat;
+    background:url('../../assets/icons/arrow-next-circle.svg') no-repeat;
     position: absolute;
     top: 270px;
     left: 80px;

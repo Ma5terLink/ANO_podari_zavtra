@@ -25,6 +25,7 @@
         display: table-cell;
         text-align: center;
         vertical-align: middle;
+        font-size: 18px;
         border-right: 1px solid #D3D7CF;
         &:last-child {
             border-right: none;
@@ -320,51 +321,5 @@
 
 
 
-    // КЛАССЫ ДЛЯ СТРАНИЧКИ RESULTS
-    &__resultsWrapper {
-        h2 {
-            margin-bottom: 10px;
-        }
-        &-links {
-            margin: 10px 0;
-            text-align: right;
-            span {
-                color: green;
-                font-weight: 700;
-            }
-        }
-        &-item {
-            display: flex;
-            position: relative;
-            height: 266px;
-            margin-bottom: 10px;
-            img {
-                width: 200px;
-                height: 266px;
-                border: 1px solid black;
-                border-radius: 10px;
-                &:hover {
-                    box-shadow: 2px 2px 5px var(--color-black);
-                }
-            }
-            i {
-                display: block;
-                height: 18px;
-                margin-left: 5px;
-                font-size: 14px;
-                color: var(--color-main);
-            }
-            p {
-              position: absolute;
-              top: 20px;
-              left: 205px;
-              margin: 0;
-              font-size: 14px;
-              width: 603px;
-              max-height: 246px;
-              text-align: justify;
-            }
-        }
-        
-    }
+   
 }

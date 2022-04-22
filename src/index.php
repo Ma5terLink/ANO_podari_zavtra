@@ -1,70 +1,11 @@
+<?php include("path.php"); ?>
+
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Автономная некоммерческая организация содействия реабилитации лиц с ограниченными возможностями здоровья "Подари завтра"</title>
-
-    <link rel="apple-touch-icon" sizes="57x57" href="icons/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="icons/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="icons/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="icons/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="icons/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="icons/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="icons/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="icons/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="icons/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon/favicon-16x16.png">
-    <link rel="manifest" href="icons/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="icons/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    
-    <header class="header">
-        <div class="social">
-            <div class="social__item">
-                <a href="https://vk.com/ano_podari_zavtra" target="_blank" title="Мы в ВК">
-                    <img src="img/social/vk.svg">
-                </a>
-            </div>
-            <div class="social__item">
-                <a href="https://instagram.com/ano_podari_zavtra" target="_blank" title="Мы в Instagram">
-                    <img src="img/social/instagram.svg">
-                </a>
-            </div>
-        </div>
-        <div class="logo">
-            <img src="img/logo.png" alt="">
-        </div>
-        <div class="hText">
-            <div class="hText__name">Автономная некоммерческая организация содействия реабилитации лиц с ограниченными возможностями здоровья
-            "Подари завтра"
-            </div>
-            <div class="hText__address">
-                453214, Республика Башкортостан, г.Ишимбай, ул. Ленина, 56<br>
-                Пн-Пт.: с 10:00 - 20:00 (без перерыва)
-            </div>
-        </div>
-        <form class="hSearch" action="/search">
-            <input type="text" name="mainSearch" placeholder="Поиск по сайту">
-            <input type="submit" value="">
-        </form>
-        <div class="hPhones">
-            <a href="tel:+79874870651">+7(987)487-06-51</a>
-            <a href="tel:+79174478744">+7(917)447-87-44</a>
-        </div>
-        <div class="hModalLink">
-            <a href="#">Заказать звонок</a>
-        </div>
-    </header>
+    <?php include("app/include/header.php"); ?>
 
     <section class="slider">
         <div class="container">
@@ -77,7 +18,7 @@
                                 <h3 class="title">
                                     <span>Матвеев Семён</span>, 8 лет<br>
                                     ДЦП</h3>
-                                <img src="img/slider/slide-001.jpg" width="1170" height="400" alt="MatveevS" />
+                                <img src="<?php echo BASE_URL ?>assets/img/slider/slide-001.jpg" width="1170" height="400" alt="MatveevS" />
                                 <!-- <div class="text">
                                     <span>Место рождения:</span> г. Набережные челны<br>
                                     <span>Цель сбора:</span> Операция на спинном мозге СДР в клинике Children's StLouise США<br>
@@ -88,7 +29,7 @@
                                 <h3 class="title">
                                     <span>Матиенко Паисий</span>, 4 года<br>
                                     ДЦП</h3>
-                                <img src="img/slider/slide-002.jpg" width="1170" height="400" alt="MatienkoP" />
+                                <img src="<?php echo BASE_URL ?>assets/img/slider/slide-002.jpg" width="1170" height="400" alt="MatienkoP" />
                                 <!-- <div class="text">
                                     <span>Место рождения:</span> г.Стерлитамак<br>
                                     <span>Цель сбора:</span> Реабилитация<br>
@@ -99,7 +40,7 @@
                                 <h3 class="title">
                                     <span>Бойко Савелий</span>, 1 год<br>
                                     Спинальная мышечная атрофия 1 типа</h3>
-                                <img src="img/slider/slide-003.jpg" width="1170" height="400" alt="BoikoS" />
+                                <img src="<?php echo BASE_URL ?>assets/img/slider/slide-003.jpg" width="1170" height="400" alt="BoikoS" />
                                 <!-- <div class="text">
                                     <span>Место рождения:</span> Ставропольский край, Новоселицкий район, с. Новоселицкое <br>
                                     <span>Цель сбора:</span> сбор на препарат Zolgensma<br>
@@ -110,7 +51,7 @@
                                 <h3 class="title">
                                     <span>Васильева Юля</span>, 6 лет<br>
                                     Нейробластома забрюшинного пространства(РАК)</h3>
-                                <img src="img/slider/slide-004.jpg" width="1170" height="400" alt="VasilevaU" />
+                                <img src="<?php echo BASE_URL ?>assets/img/slider/slide-004.jpg" width="1170" height="400" alt="VasilevaU" />
                                 <!-- <div class="text">
                                     <span>Место рождения:</span> г.Краснодар<br>
                                     <span>Цель сбора:</span> На препарат иммунотерапии "Динутуксимаб бета" в онкоцентре им. Р.М. Горбачевой.<br>
@@ -144,67 +85,39 @@
         
     </section>
 
-    
-
     <section class="siteSection">
         <!-- Главное меню -->
         <nav class="mainMenu">
-            <a href="#" >Главная</a>
-            <a href="aboutUs.html" >О нас</a>
-            <a href="newsPromos.html" >Новости и акции</a>
-            <a href="#" >Прейскурант</a>
-            <a href="#" >Наши услуги</a>
-            <a href="#" >Наши возможности</a>
-            <a href="#" >Наши планы</a>
-            <a href="#" >Контакты</a>
+            <a href="#">Главная</a>
+            <a href="<?php echo BASE_URL .'aboutUs.php'?>">О нас</a>
+            <a href="<?php echo BASE_URL .'newsPromos.php'?>">Новости и акции</a>
+            <a href="<?php echo BASE_URL .'pricelist.php'?>">Прейскурант</a>
+            <a href="<?php echo BASE_URL .'ourServices.php'?>">Наши услуги</a>
+            <a href="<?php echo BASE_URL .'ourCapabilities.php'?>">Наши возможности</a>
+            <a href="<?php echo BASE_URL .'ourPlans.php'?>">Наши планы</a>
+            <a href="<?php echo BASE_URL .'galery.php'?>">Галерея</a>
+            <a href="<?php echo BASE_URL .'contacts.php'?>">Контакты</a>
         </nav>
         
-        <div class="siteContent">
-            <!-- Боковая панель -->
-            <div class="siteContent__asidePanel">
-                <div class="siteContent__asidePanel-title">
-                    <p>Volume 1</p>
-                    <div class="siteContent__asidePanel-list">
-                        <a href="#">001</a>
-                        <a href="#">002</a>
-                        <a href="#">003</a>
-                        <a href="#">004</a>
-                        <a href="#">005</a>
-                        <a href="#">006</a>
-                    </div>
-                </div>
-                <div class="siteContent__asidePanel-title">
-                    <p>Volume 2</p>
-                    <div class="siteContent__asidePanel-list">
-                        <a href="#">0001</a>
-                        <a href="#">0002</a>
-                    </div>
-                </div>
-                <div class="siteContent__asidePanel-title">
-                    <p>Volume 3</p>
-                    <div class="siteContent__asidePanel-list">
-                        <a href="#">00001</a>
-                        <a href="#">00002</a>
-                    </div>
-                </div>
-                <div class="siteContent__latestResult">
-                    <h4>Крайний результат :)</h4>
-                    <h5>26.01.2022</h5>
-                    <a href="#">
-                        <img src="img/news/dd1.jpg">
-                    </a>
-                    <i>Ольга Сенникова</i>
-                    <p>Выражаем огромную благодарность центру Rehab за помощь нашим деткам!!! Мы с Рафаэлем посещаем этот центр с 2015 года!!! Мы просто безума от всех кто работает в этом центре! Все очень приветливые и заботливые, приятная, добрая атмосфера! ! Ребенку нравиться заниматься ЛФК потому что занятия проходят на плавной и размеренной ноте! Созданы все условия для эффективных занятий! Проходя курсы реабилитации в центре Рехаб у нас появляются положительные результаты! Огромное спасибо массажисту Наилю после его массажа ребенок успокаивается и снимается тонус! ЛФК всегда проходит так что бы ребенок не капризничал и делал все до максимально возможности! Спасибо вам! Мы будем ходить к вам снова и снова!</p>
-                    <a href="results.html">Все результаты</a>
-                </div>
-                <div class="siteContent__usefulLinks">
-                    <h5>Полезные ссылки</h5>
+        <?php include("app/include/asidePanel.php"); ?>
 
-                    <!-- Вставить ссылки на разные, полезные сайты -->
+        <!-- Блок крайнего достижения -->
+        <div class="siteContent__latestResult">
+            <h4>Крайний результат :)</h4>
+            <h5>26.01.2022</h5>
+            <a href="#">
+                <img src="<?php echo BASE_URL ?>assets/img/news/dd1.jpg">
+            </a>
+            <i>Ольга Сенникова</i>
+            <p>Выражаем огромную благодарность центру Rehab за помощь нашим деткам!!! Мы с Рафаэлем посещаем этот центр с 2015 года!!! Мы просто безума от всех кто работает в этом центре! Все очень приветливые и заботливые, приятная, добрая атмосфера! ! Ребенку нравиться заниматься ЛФК потому что занятия проходят на плавной и размеренной ноте! Созданы все условия для эффективных занятий! Проходя курсы реабилитации в центре Рехаб у нас появляются положительные результаты! Огромное спасибо массажисту Наилю после его массажа ребенок успокаивается и снимается тонус! ЛФК всегда проходит так что бы ребенок не капризничал и делал все до максимально возможности! Спасибо вам! Мы будем ходить к вам снова и снова!</p>
+            <a href="<?php echo BASE_URL .'results.php'?>">Все результаты</a>
+        </div>
+        <div class="siteContent__usefulLinks">
+            <h5>Полезные ссылки</h5>
+            <!-- Вставить ссылки на разные, полезные сайты -->
 
-
-                </div>
-            </div>
+        </div>
+        </div>
             <!-- Основной контент сайта -->
             <div class="siteContent__mainWrapper">
                 <!-- Новостной блок - последние три новости -->
@@ -213,7 +126,7 @@
                     <div class="siteContent__shortNewsBlock-wrapper">
                         <div class="siteContent__shortNewsBlock-item">
                             <a href="#">
-                                <img src="img/news/n1.jpg" alt="Тут какое-то описание">
+                                <img src="<?php echo BASE_URL ?>assets/img/news/n1.jpg" alt="Тут какое-то описание">
                             </a>
                             <h5>15.08.2021</h5>
                             <h4>Мы работаем с сертификатами на реабилитацию детей-инвалидов‼</h4>
@@ -221,7 +134,7 @@
                         </div>
                         <div class="siteContent__shortNewsBlock-item">
                             <a href="#">
-                                <img src="img/news/n2.jpg" alt="Тут какое-то описание">
+                                <img src="<?php echo BASE_URL ?>assets/img/news/n2.jpg" alt="Тут какое-то описание">
                             </a>
                             <h5>05.08.2021</h5>
                             <h4>МСЭ</h4>
@@ -229,7 +142,7 @@
                         </div>
                         <div class="siteContent__shortNewsBlock-item">
                             <a href="#">
-                                <img src="img/news/n3.jpg" alt="Тут какое-то описание">
+                                <img src="<?php echo BASE_URL ?>assets/img/news/n3.jpg" alt="Тут какое-то описание">
                             </a>
                             <h5>01.06.2021</h5>
                             <h4>Сертификаты на реабилитацию детей--инвалидов</h4>
@@ -265,51 +178,15 @@
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore praesentium totam earum numquam eius deserunt dolores consectetur. Corrupti, ea?</p>
                 </div>
 
-                <div class="siteContent__line"></div>
-
                 <!-- Блок ссылок на болезни -->
-                <div class="siteContent__whyYouHereBlock">
-                    <h2>Какая проблема вас к нам привела?</h2>
-                    <div class="siteContent__whyYouHereBlock-wrapper">
-                        <a href="#">Lorem, ipsum.</a>
-                        <a href="#">Lorem, ipsum safsaf.</a>
-                        <a href="#">Lorem</a>
-                        <a href="#">Lorem ipsum dolor sit.</a>
-                        <a href="#">Lorem, ipsum sfs</a>
-                        <a href="#">Loremssfsaf</a>
-                        <a href="#">Lorem, ipsusfsafm.</a>
-                        <a href="#">Loremss sipsum.</a>
-                        <a href="#">asfasfssfsafasfasf</a>
-                        <a href="#">Lorem, ipsum safsaf.</a>
-                        <a href="#">Lorem, ipsumss</a>
-                        <a href="#">Loressa 11413</a>
-                        <a href="#">Lorem, ipsumss</a>
-                        <a href="#">Loressa 11413</a>
-
-                    </div>
-                </div>
+                <?php include("app/include/healthLinks.php"); ?>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="footer__copyright">
-            Все права защищены © 2022<br>
-            АНО "Подари завтра"
-        </div>
-        <div class="footer__address">
-            453214, Республика Башкортостан, г.Ишимбай, ул. Ленина, 56<br>
-            Пн-Пт.: с 10:00 - 20:00 (без перерыва)
-        </div>
-        <div class="footer__developer">
-            Сайт разработан: <a href="#">Ma5terLinK</a>
-        </div>
-    </footer>
-
-
-
-
-    <script src="js/tiny.js"></script>
+    <?php include("app/include/footer.php"); ?>
+    
+    <script src="<?php echo BASE_URL ?>assets/js/tiny.js"></script>
     <script>
         var slideshow=new TINY.slider.slide('slideshow',{
         id:'slider',
@@ -325,7 +202,5 @@
         right:'slideright'
         });
     </script>
-    <script src="js/scripts.js"></script>
-
 </body>
 </html>
