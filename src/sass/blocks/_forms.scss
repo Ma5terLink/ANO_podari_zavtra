@@ -1,0 +1,84 @@
+.siteSection {
+    h3 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 27px;
+        text-transform: uppercase;
+        color: var(--color-secondary);
+    }
+    .registerForm, .authForm{
+        position: relative;
+        top: 0;
+        height: 230px;
+        width: 530px;
+        margin: 0 auto;
+        div {
+            margin-bottom: 5px;
+            p {
+                display: inline;
+                position: relative;
+                font-size: 14px;
+                left: 10px;
+            }
+        }
+        &__input {
+            display: inline-block;
+            position: absolute;
+            font-size: 14px;
+            padding: 0 5px;
+            right: 10px;
+            width: 380px;
+            height: 25px;
+            outline: none;
+        }
+        &__button {
+            display: block;
+            position: absolute;
+            margin-top: 10px;
+            width: 200px;
+            height: 40px;
+            right: 10px;
+            background-color: var(--color-secondary);
+            border: 0;
+            border-radius: 5px;
+            outline: none;
+            color: var(--color-white);
+            &:hover {
+                box-shadow: 2px 2px 5px var(--color-black);
+            }
+        }
+        &__msg {
+            display: block;
+            position: relative;
+            width: 100%;
+            top: 63px;
+            text-align: center;
+            font-size: 17px;
+            color:rgb(223, 10, 10);
+            p {
+                color: rgb(16, 173, 16);
+            }
+        }
+        
+    }
+    .authForm {
+        height: 180px;
+        div p {
+            display: inline;
+            position: relative;
+            font-size: 14px;
+            left: 47px;
+        }
+        &__input {
+            right: 47px;
+        }
+        &__button {
+            left: calc(100% / 2 - 100px);
+        }
+        &__msg {
+            top: 70px;
+            color:rgb(223, 10, 10);
+
+        }
+    }
+}

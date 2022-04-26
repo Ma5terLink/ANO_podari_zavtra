@@ -2,6 +2,11 @@
     position: relative;
     width: 1109px;
     margin: 0 auto;
+    h2 {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        color: var(--color-secondary);
+    }
 }
 
 
@@ -151,11 +156,7 @@
     // ОСНОВНОЙ КОНТЕНТ - БЛОК
     &__mainWrapper {
         padding-left: 30px;
-        h2 {
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            color: var(--color-secondary);
-        }
+        
     }
 
 
@@ -310,16 +311,6 @@
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
 
    
 }

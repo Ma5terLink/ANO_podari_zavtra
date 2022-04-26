@@ -2,6 +2,10 @@
 Коммерческий проект для центра реабилитации.
 
 
+=04= (26-04-2022) МСК+2
+- Закончена верстка основных страниц админки, формы регистрации и авторизации (+логика). Также, в основном полностью закончена верстка и интерактив сайта. Прикручена БД. Реализованы авторизация и регистрация на сайте.
+- The layout of the main admin pages, registration and authorization forms (+logic) has been completed. Also, the layout and interactive content of the site are mostly completely finished. The database is bolted. Authorization and registration on the site are implemented.
+
 
 =03= (23-04-2022) МСК+2
 - Предварительная верстка основных страниц сайта завершена. Пересмотрена и переработана структура сайта. Часто повторяющиеся элементы, могущие содержать что-либо, выведены в отдельные блоки. Начата работа с php.

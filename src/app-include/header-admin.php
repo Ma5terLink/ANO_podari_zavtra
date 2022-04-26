@@ -21,22 +21,12 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="<?php echo BASE_URL ?>assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>assets/css/admin.css">
+
 </head>
 <body>
 
 <header class="header">
-        <div class="social">
-            <div class="social__item">
-                <a href="https://vk.com/ano_podari_zavtra" target="_blank" title="Мы в ВК">
-                    <img src="<?php echo BASE_URL ?>assets/img/social/vk.svg">
-                </a>
-            </div>
-            <div class="social__item">
-                <a href="https://instagram.com/ano_podari_zavtra" target="_blank" title="Мы в Instagram">
-                    <img src="<?php echo BASE_URL ?>assets/img/social/instagram.svg">
-                </a>
-            </div>
-        </div>
         <div class="logo">
             <a href="<?php echo BASE_URL ?>">
                 <img src="<?php echo BASE_URL ?>assets/img/logo.png" alt="">
@@ -51,27 +41,22 @@
                 Пн-Пт.: с 10:00 - 20:00 (без перерыва)
             </div>
         </div>
-        <form class="hSearch" action="/search">
-            <input type="text" name="mainSearch" placeholder="Поиск по сайту">
-            <input type="submit" value="">
-        </form>
-            
-        <!-- Код будет выполнен, если в супермассиве SESSION, будет какой-то id -->
-            <?php if ($_SESSION['admin']): ?>
-                <!-- <?=tt($_SESSION);?> -->
-                <div class="admin_star">
-                    <a href="<?php echo BASE_URL ?>admin/news/index.php">
-                        <img src="<?php echo BASE_URL ?>assets/img/admin_star.png"> 
-                    </a>
-                </div>
-            <?php endif; ?>
-            <!-- Закончили кусок кода php -->
-
-        <div class="hPhones">
-            <a href="tel:+79874870651">+7(987)487-06-51</a>
-            <a href="tel:+79174478744">+7(917)447-87-44</a>
-        </div>
-        <div class="hModalLink">
-            <a href="#">Заказать звонок</a>
+        <div class="admin_star">
+            <!-- <a href="<?php echo BASE_URL ?>admin/admin.php"> -->
+            <img src="<?php echo BASE_URL ?>assets/img/admin_star.png"> 
+            <!-- </a> -->
         </div>
     </header>
+
+    <!-- Админ-строка -->
+    <nav class="adminString">
+        <ul>
+            <li>Пользователь: <b><?php echo $_SESSION['login'] ?></b></li>
+            <li><b>-== АДМИНИСТРАТИВНАЯ ПАНЕЛЬ ==-</b></li>
+            <li>
+                <a href="<?php echo BASE_URL ?>"><b>Главная</b></a>
+                /
+                <a href="<?php echo BASE_URL ?>logout.php"><b>Выход</b></a>
+            </li>
+        </ul>
+    </nav>

@@ -1,4 +1,7 @@
-<?php include("path.php"); ?>
+<?php
+    include "path.php";
+    include "app/database/db.php";
+?>
 
 <!DOCTYPE html>
 <html lang="ru-RU">
@@ -202,5 +205,6 @@
         right:'slideright'
         });
     </script>
+    <script src="../../assets/js/script.js"></script>
 </body>
 </html>

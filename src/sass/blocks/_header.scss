@@ -28,6 +28,26 @@
         height: 150px;
     }
 }
+.admin_star {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    left: 156px;
+    top: 67px;
+    a {
+    display: block;
+    height: 50px;
+    width: 50px;
+    }
+    img {
+        display: block;
+        position: absolute;
+        background: url("../../assets/img/admin_star.png") no-repeat;
+        width: 50px;
+        height: 50px;
+    }
+}
 .hText {
     position: absolute;
     width: 498px;

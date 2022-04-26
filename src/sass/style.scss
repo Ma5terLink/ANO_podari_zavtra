@@ -3,7 +3,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap&subset=cyrillic-ext);
 @import 'libs/fonts';
 @import 'libs/tiny';
-// @import 'libs/animate';
 
 * {
     position: initial;
@@ -28,6 +27,7 @@
     --color-grey: #5A5A5A;
     --color-main: #532072;
     --color-secondary: #B81F6F;
+    --color-borders: #D3D7CF;
 }
 
 a {
@@ -46,10 +46,10 @@ h1, h2, h3, h4, h5, h6 {
 
 
 @import 'blocks/policy';
-@import 'blocks/forms';
 @import 'blocks/header';
 @import 'blocks/slider';
 @import 'blocks/siteSection';
+@import 'blocks/forms';
 @import 'blocks/results';
 @import 'blocks/aboutUs';
 @import 'blocks/newsPromos';

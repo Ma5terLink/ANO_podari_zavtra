@@ -11,5 +11,3 @@
             Сайт разработан: <a href="#">Ma5terLinK</a>
         </div>
     </footer>
-
-<script src="<?php echo BASE_URL ?>assets/js/scripts.js"></script>
