@@ -1,9 +1,8 @@
 <?php
+    session_start();
+    require("connect.php");
 
-session_start();
-require('connect.php');
-
-
+// echo "DB: Test string";
 
 function tt($value) {
     echo '<pre>';

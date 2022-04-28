@@ -2,19 +2,19 @@
  <div class="admin__sidebar">
     <ul>
         <li>
-            <a href="<?php echo BASE_URL ?>admin/news/index.php">Новости и акции</a>
+            <a href="<?php echo BASE_URL ?>admin/news/index.php" title="Просмотр и редактирование раздела постов новостей и акций.">Новости и акции</a>
         </li>
         <li>
-            <a href="<?php echo BASE_URL ?>admin/results/index.php">Достижения</a>
+            <a href="<?php echo BASE_URL ?>admin/results/index.php" title="Просмотр и редактирование раздела постов достижений и результатов.">Достижения</a>
         </li>
         <li>
-            <a href="#">Кнопки-ссылки "болезней"</a>
+            <a href="#" title="Кнопки, расположенные внизу страниц, ведущие на страничку описания выбранной болезни.">"Кнопки здоровья"</a>
         </li>
         <li>
-            <a href="<?php echo BASE_URL ?>admin/topics/index.php">Категории</a>
+            <a href="<?php echo BASE_URL ?>admin/topics/index.php" title="Просмотр и управление категориями постов.">Категории постов</a>
         </li>
         <li>
-            <a href="<?php echo BASE_URL ?>admin/users/index.php">Пользователи</a>
+            <a href="<?php echo BASE_URL ?>admin/users/index.php" title="Просмотр и управление пользователями. Доступно ТОЛЬКО администраторам.">Пользователи</a>
         </li>
     </ul>
 </div>

@@ -55,7 +55,11 @@
             <input type="text" name="mainSearch" placeholder="Поиск по сайту">
             <input type="submit" value="">
         </form>
-            
+            <div class="login00">
+            <a href="<?php echo BASE_URL ?>log.php">
+                <img src="<?php echo BASE_URL ?>assets/icons/login.svg" alt="">
+            </a>    
+        </div>
         <!-- Код будет выполнен, если в супермассиве SESSION, будет какой-то id -->
             <?php if ($_SESSION['admin']): ?>
                 <!-- <?=tt($_SESSION);?> -->

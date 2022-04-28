@@ -1,6 +1,7 @@
 <?php 
-    include("path.php");
+    include "path.php";
     include "app/database/db.php";
+    include "app/controllers/topics.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,20 +12,21 @@
     <?php include("app/include/header.php"); ?>
 
     <section class="siteSection">
-        <!-- Главное меню -->
-        <nav class="mainMenu">
-            <a href="<?php echo BASE_URL ?>">Главная</a>
-            <a href="<?php echo BASE_URL .'aboutUs.php'?>">О нас</a>
-            <a href="#">Новости и акции</a>
-            <a href="<?php echo BASE_URL .'pricelist.php'?>">Прейскурант</a>
-            <a href="<?php echo BASE_URL .'ourServices.php'?>">Наши услуги</a>
-            <a href="<?php echo BASE_URL .'ourCapabilities.php'?>">Наши возможности</a>
-            <a href="<?php echo BASE_URL .'ourPlans.php'?>">Наши планы</a>
-            <a href="<?php echo BASE_URL .'galery.php'?>">Галерея</a>
-            <a href="<?php echo BASE_URL .'contacts.php'?>">Контакты</a>
-        </nav>
-        
-        <?php include("app/include/asidePanel.php"); ?>
+    <?php include("app/include/main-menu.php");
+          include("app/include/asidePanel.php"); ?>
+
+        <div class="news__categories-list">
+        <h4>категории</h4>
+            <ul>
+                <?php foreach ($topicsARR as $key => $topic): ?>
+                    <?php if($topic['superSection'] === "news"): ?>
+                        <li>
+                            <a href="#"><?= $topic['name']; ?></a>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
+        </div>
 
             <div class="siteContent__usefulLinks">
                 <h5>Полезные ссылки</h5>

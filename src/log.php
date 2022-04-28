@@ -38,9 +38,7 @@
 
                     <button class="authForm__button" type="submit" name="authForm__button">Войти</button>
 
-                    <div class="authForm__msg">
-                        <?=$errMsg?>
-                    </div>
+                    <div class="authForm__msg"><?=$errMsg?></div>
 
                 </form>
             <div class="siteContent__line"></div>

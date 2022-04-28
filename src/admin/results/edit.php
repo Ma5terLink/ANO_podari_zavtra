@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-    <title>ДОБАВЛЕНИЕ ДОСТИЖЕНИЯ - АНО "Подари завтра"</title>
+    <title>РЕДАКТИРОВАНИЕ ДОСТИЖЕНИЯ - АНО "Подари завтра"</title>
 </head>
     <?php include "../../app/include/header-admin.php"; ?>
 
@@ -22,14 +22,15 @@
             <h2>Добавление достижения</h2>
             <div class="postsGrid">
                 <div class="newsGrid__column">
-                    <form action="create.php" method="post">
+                    <form action="edit.php" method="post"  accept-charset="UTF-8">
+                    <input type="hidden" value="<?=$id?>" name="id">
                         <div class="nTitle">
                             <label for="results-title">Название достижения:</label>
-                            <input required type="text" value="<?=$title?>" name="results-title" id="results-title" placeholder="Введите название новости\акции (не менее 7 символов)">
+                            <input required type="text" value="<?=$title?>" name="results-title"  id="results-title" placeholder="Отредактируйте название достижения">
                         </div>
                         <div class="nContent">
-                            <label for="editor">Содержание достижения:</label>
-                            <textarea placeholder="Добавьте содержание статьи..." name="results-content" id="editor"><?=$content?></textarea>
+                            <label for="results-content">Содержание достижения:</label>
+                            <textarea name="results-content" id="editor"><?=$content;?></textarea>
                         </div>
                         <div class="nBottom">
                             <div>
@@ -37,23 +38,26 @@
                                     <img src="<?php echo BASE_URL."assets/icons/foto-no.svg"?>" alt="nImg">
                                 </div>
                                 <div class="nFile">
-                                    <input type="file" id="i-gFile" name="results-titleImgFile">
-                                    <label for="i-gFile"></label>
+                                    <input value="<?=$img?>" type="file" id="i-gFile" name="news-titleImgFile"">
+                                    <input type="hidden" value="<?=$img?>" name="fileInDB">
+                                    <label for="i-gFile"><?=$img?></label>
                                 </div>
                             </div>
                             <div class="nCat">
                                 <label for="nSel">Категория записи:</label>
                                 <select id="nSel" name="results-categories">
-                                <?php foreach ($topicsARR as $key => $topic): ?>
-                                    <?php if($topic['superSection'] === "results"): ?>
-                                        <option value="<?=$topic['id']?>"><?=$topic['name']?></option> 
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
+                                <option selected value="<?=$id_temp['id'];?>"><?=$id_topicName?></option>
+                                    <option disabled>-------------------------</option>
+                                    <?php foreach ($topicsARR as $key => $topic): ?>
+                                        <?php if($topic['superSection'] === "results"): ?>
+                                            <option value="<?=$topic['id']?>"><?=$topic['name']?></option> 
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
                         <div class="err-msg"><?=$errMsg?></div>
-                        <button class="admin_Btn" type="submit" name="results-saveBtn">Сохранить запись</button>
+                        <button class="admin_Btn" type="submit" name="results-editBtn">Сохранить запись</button>
                     </form>
 
                 </div>

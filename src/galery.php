@@ -11,20 +11,8 @@
     <?php include("app/include/header.php"); ?>
 
     <section class="siteSection">
-        <!-- Главное меню -->
-        <nav class="mainMenu">
-            <a href="<?php echo BASE_URL ?>">Главная</a>
-            <a href="<?php echo BASE_URL .'aboutUs.php'?>">О нас</a>
-            <a href="<?php echo BASE_URL .'newsPromos.php'?>">Новости и акции</a>
-            <a href="<?php echo BASE_URL .'pricelist.php'?>">Прейскурант</a>
-            <a href="<?php echo BASE_URL .'ourServices.php'?>">Наши услуги</a>
-            <a href="<?php echo BASE_URL .'ourCapabilities.php'?>">Наши возможности</a>
-            <a href="<?php echo BASE_URL .'ourPlans.php'?>">Наши планы</a>
-            <a href="#">Галерея</a>
-            <a href="<?php echo BASE_URL .'contacts.php'?>">Контакты</a>
-        </nav>
-        
-        <?php include("app/include/asidePanel.php"); ?>
+    <?php include("app/include/main-menu.php");
+          include("app/include/asidePanel.php"); ?>
 
         <div class="siteContent__usefulLinks">
             <h5>Полезные ссылки</h5>

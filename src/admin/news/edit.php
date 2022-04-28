@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-    <title>ДОБАВЛЕНИЕ НОВОСТИ - АНО "Подари завтра"</title>
+    <title>РЕДАКТИРОВАНИЕ НОВОСТИ - АНО "Подари завтра"</title>
 </head>
     <?php include "../../app/include/header-admin.php"; ?>
 
@@ -19,17 +19,18 @@
                 <a href="create.php">Добавить новость</a>
                 <a href="index.php">Управление постами</a>
             </div>
-            <h2>Добавление новости</h2>
+            <h2>Редактирование новости</h2>
             <div class="postsGrid">
                 <div class="newsGrid__column">
-                    <form action="create.php" method="post">
+                    <form action="edit.php" method="post" accept-charset="UTF-8">
+                        <input type="hidden" value="<?=$id?>" name="id">
                         <div class="nTitle">
                             <label for="news-title">Название новости\акции:</label>
-                            <input required value="<?=$title;?>" type="text" name="news-title" id="news-title" placeholder="Введите название новости\акции (не менее 7 символов)">
+                            <input required value="<?=$title;?>" type="text" name="news-title" id="news-title" placeholder="Отредактируйте название новости\акции">
                         </div>
                         <div class="nContent">
                             <label for="news-content">Содержание новости\акции:</label>
-                            <textarea placeholder="Добавьте содержание статьи..." name="news-content" id="editor""><?=$content;?></textarea>
+                            <textarea name="news-content" id="editor"><?=$content;?></textarea>
                         </div>
                         <div class="nBottom">
                             <div>
@@ -37,13 +38,16 @@
                                     <img src="<?php echo BASE_URL."assets/icons/foto-no.svg"?>" alt="nImg">
                                 </div>
                                 <div class="nFile">
-                                    <input type="file" id="i-gFile" name="news-titleImgFile">
-                                    <label for="i-gFile"></label>
+                                    <input value="<?=$img?>" type="file" id="i-gFile" name="news-titleImgFile"">
+                                    <input type="hidden" value="<?=$img?>" name="fileInDB">
+                                    <label for="i-gFile"><?=$img?></label>
                                 </div>
                             </div>
                             <div class="nCat">
                                 <label for="nSel">Категория записи:</label>
                                 <select id="nSel" name="news-categories">
+                                    <option selected value="<?=$id_temp['id'];?>"><?=$id_topicName?></option>
+                                    <option disabled>-------------------------</option>
                                     <?php foreach ($topicsARR as $key => $topic): ?>
                                         <?php if($topic['superSection'] === "news"): ?>
                                             <option value="<?=$topic['id']?>"><?=$topic['name']?></option> 
@@ -52,8 +56,9 @@
                                 </select>
                             </div>
                         </div>
+                       
                         <div class="err-msg"><?=$errMsg?></div>
-                        <button class="admin_Btn" type="submit" name="news-saveBtn">Сохранить запись</button>
+                        <button class="admin_Btn" type="submit" name="news-editBtn">Сохранить запись</button>
                     </form>
 
                 </div>

@@ -26,6 +26,8 @@
 </head>
 <body>
 
+<?php if (!$_SESSION['admin']) header('location: '.BASE_URL); ?>
+
 <header class="header">
         <div class="logo">
             <a href="<?php echo BASE_URL ?>">

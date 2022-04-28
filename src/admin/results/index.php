@@ -1,6 +1,6 @@
 <?php 
-    session_start();
     include("../../path.php");
+    include "../../app/controllers/results.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,43 +17,55 @@
             <!-- Кнопки управления -->
             <div class="buttonsPosts">
                 <a href="create.php">Добавить достижение</a>
-                <a href="#">Управление постами достижений</a>
+                <a href="index.php">Управление постами достижений</a>
             </div>
             <h2>Управление постами достижений</h2>
             <div class="postsGrid">
                 <div class="rowT">
-                    <div class="rowT-id"><b>ID</b></div>
-                    <div class="rowT-title"><b>Название</b></div>
+                <div class="rowT-id"><b>ID</b></div>
+                    <div class="rowT-title" title="Заголовок новости.{Отображается на странице новости}"><b>Название</b></div>
+                    <div class="rowT-topic"><b>Категория</b></div>
                     <div class="rowT-author"><b>Автор</b></div>
+                    <div class="rowT-dateCreate"><b>Дата создания</b></div>
+                    <div class="rowT-publishingStatus"><b>Статус</b></div>
                     <div class="rowT-editorBtn"><b>Редактирование</b></div>
                 </div>
-                <div class="row">
-                <div class="rowT-id">54</div>
-                    <div class="rowT-title">Какое-то интересное название, заданное гениальнейшим администратором сего сайта и всея интернета.</div>
-                    <div class="rowT-author">Admin</div>
-                    <div class="rowT-editorBtn">
-                        <div class="colGREEN"><a href="">Edit</a></div>
-                        <div class="colRED"><a href="">Delete</a></div>
+                <!-- Выводим список статей -->
+                <?php foreach ($resultsARR as $key => $results): ?>
+                    <div class="row">
+                    <div class="rowT-id"><?=$results['id']?></div>
+                        <div class="rowT-title"><?=$results['title']?></div>
+                        <div class="rowT-topic">
+                            <?php
+                                $id_topic = ['id' => $results['id_topic']];
+                                $name_topic = selectOne('topics', $id_topic);
+                                echo $name_topic['name'];
+                            ?>
+                        </div>
+                        <div class="rowT-author">
+                            <?php 
+                                $name_author = ['id' => $results['id_user']];
+                                $autor_topic = selectOne('users', $name_author);
+                                echo $autor_topic['username'];
+                            ?>
+                        </div>
+                        <div class="rowT-dateCreate"><?=$results['created']?></div>
+                        <div class="rowT-publishingStatus">
+                            <?php
+                                if ($results['published']) {
+                                    echo "Опубликовано";
+                                }else{
+                                    echo "Не опубликовано";
+                                }
+                            ?>
+                        </div>
+                        <div class="rowT-editorBtn">
+                            <div class="editIcons"><a href="edit.php?id=<?=$results['id'];?>"><img title="Редактировать" src="../../assets/icons/edit-3.svg"></a></div>
+                            <div class="editIcons"><a href="edit.php?del_id=<?=$results['id'];?>"><img title="Удалить" src="../../assets/icons/delete-2.svg"></a></div>
+                            <div class="editIcons"><a href="edit.php?pub_id=<?=$results['id'];?>"><img title="Опубликовать\Снять с публикации" src="../../assets/icons/publish.svg"></a></div>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="rowT-id">21</div>
-                    <div class="rowT-title">Проход вергилия.</div>
-                    <div class="rowT-author">Admin</div>
-                    <div class="rowT-editorBtn">
-                        <div class="colGREEN"><a href="">Edit</a></div>
-                        <div class="colRED"><a href="">Delete</a></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="rowT-id">11</div>
-                    <div class="rowT-title">Поступление сертификатов на прохождение санаторно-курортного лечения детей.</div>
-                    <div class="rowT-author">Admin</div>
-                    <div class="rowT-editorBtn">
-                        <div class="colGREEN"><a href="">Edit</a></div>
-                        <div class="colRED"><a href="">Delete</a></div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

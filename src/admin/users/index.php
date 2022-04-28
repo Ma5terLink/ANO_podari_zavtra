@@ -1,6 +1,6 @@
 <?php 
-    session_start();
-    include("../../path.php");
+    include "../../path.php";
+    include "../../app/controllers/users-sec.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
             <!-- Кнопки управления -->
             <div class="buttonsPosts">
                 <a href="create.php">Добавить</a>
-                <a href="#">Управление пользователями</a>
+                <a href="index.php">Управление пользователями</a>
             </div>
             <h2>Управление пользователями</h2>
             <div class="postsGrid">
@@ -28,30 +28,30 @@
                     <div class="rowT-role"><b>Роль</b></div>
                     <div class="rowT-editorBtn"><b>Редактирование</b></div>
                 </div>
-                <div class="row">
-                <div class="rowT-id">20</div>
-                    <div class="rowT-title">kamelot1</div>
-                    <div class="rowT-email">ddee@yandex.ru</div>
-                    <div class="rowT-role">Пользователь</div>
-                    <div class="rowT-editorBtn">
-                        <div class="colGREEN"><a href="">Edit</a></div>
-                        <div class="colRED"><a href="">Delete</a></div>
+                <?php foreach ($usersARR as $key => $users): ?>
+                    <div class="row">
+                        <div class="rowT-id"><?=$users['id'];?></div>
+                            <div class="rowT-title"><?=$users['username'];?></div>
+                            <div class="rowT-email"><?=$users['email'];?></div>
+                            <div class="rowT-role">
+                                <?php
+                                    if ($users['admin']) {
+                                        echo "Администратор";
+                                    }elseif($users['moderator']) {
+                                        echo "Модератор";
+                                    }else{
+                                        echo "Пользователь";
+                                    }
+                                ?>
+                            </div>
+                            <div class="rowT-editorBtn">
+                                <div class="editIcons"><a href="edit.php?id=<?=$users['id'];?>"><img title="Редактировать" src="../../assets/icons/edit-3.svg"></a></div>
+                                <div class="editIcons"><a href="edit.php?del_id=<?=$users['id'];?>"><img title="Удалить" src="../../assets/icons/delete-2.svg"></a></div>
+                            </div>
+                        </div>
+                <?php endforeach; ?>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="rowT-id">19</div>
-                    <div class="rowT-title">shantsunG</div>
-                    <div class="rowT-email">shaa@inbox.ru</div>
-                    <div class="rowT-role">Администратор</div>
-                    <div class="rowT-editorBtn">
-                        <div class="colGREEN"><a href="">Edit</a></div>
-                        <div class="colRED"><a href="">Delete</a></div>
-                    </div>
-                </div>
-
-            </div>
         </div>
-    </div>
 
     <?php include("../../app/include/footer.php"); ?>
 </body>

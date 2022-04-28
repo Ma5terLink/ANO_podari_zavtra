@@ -1,5 +1,5 @@
 <?php
-include "app/database/db.php";
+    include "../../app/database/db.php";
 
 $errMsg='';
 $warARR=[];

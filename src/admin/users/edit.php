@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-    <title>ДОБАВЛЕНИЕ НОВОГО ПОЛЬЗОВАТЕЛЯ - АНО "Подари завтра"</title>
+    <title>РЕДАКТИРОВАНИЕ ПОЛЬЗОВАТЕЛЯ - АНО "Подари завтра"</title>
 </head>
     <?php include "../../app/include/header-admin.php"; ?>
 
@@ -19,10 +19,11 @@
                 <a href="create.php">Добавить</a>
                 <a href="index.php">Управление пользователями</a>
             </div>
-            <h2>Создание нового пользователя</h2>
+            <h2>Редактирование пользователя</h2>
             <div class="postsGrid">
                 <div class="newsGrid__column">
                     <form action="create.php" method="post">
+                        <input type="hidden" value="<?=$id?>" name="id"> <!--dgdg-->
                         <div class="nTitle">
                             <label for="users-login"><b>Логин пользователя:</b></label>
                             <input required type="text" value="<?=$login?>" name="reg_login" id="users-login" placeholder="Введите логин пользователя">
@@ -35,18 +36,20 @@
 
                             <label for="users-passS"><b>Повторите пароль пользователя:</b></label>
                             <input required type="password" name="reg_passS" id="users-passS" placeholder="Повторите пароль пользователя">
+                            <div class="colorRED">Внимание, пароль меняется принудительно (без подтверждения)!!!</div>
+
                         </div>
                         <div class="nCat">
                             <label for="nSel">Роль:</label>
                             <select id="nSel" name="reg_users_categories">
+                                <option selected><?=$role?></option>
+                                <option disabled>-------------------------</option>
                                 <option value="user">Пользователь</option>
                                 <option value="moder">Модератор</option>
                                 <option value="admin">Администратор</option>
                             </select>
                         </div>
-
-                        <div class="err-msg"><?=$errMsg?></div>
-                        <button class="admin_Btn" type="submit" name="registerForm__button">Создать</button>
+                        <button class="admin_Btn" type="submit" name="editRegisterForm__button">Сохранить изменения</button>
                     </form>
 
                 </div>

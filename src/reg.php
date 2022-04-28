@@ -28,6 +28,7 @@
                 <h3>Регистрация нового пользователя</h3>
 
                 <form action="reg.php" method="post" class="registerForm">
+                    <input type="hidden" value="user" name="users-categories">
                     <div>
                         <p>Логин:</p>
                         <input class="registerForm__input" value="<?=$login?>" name="reg_login" type="text" id="loginInput" placeholder="Введите желаемый логин">
@@ -49,7 +50,6 @@
 
                     <div class="registerForm__msg">
                         <?=$errMsg?>
-                        <p><?=$regMsg?></p>
                     </div>
 
                 </form>
