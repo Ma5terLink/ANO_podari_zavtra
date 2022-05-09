@@ -1,5 +1,5 @@
 <?php 
-    include("path.php");
+    include "path.php";
     include "app/database/db.php";
 ?>
 
@@ -22,10 +22,81 @@
         </div>
         <!-- Основной контент сайта -->
         <div class="siteContent__mainWrapper">
-            <h2>галерея</h2>
-            ...
+            <h2>фотогалерея</h2>
+            <div class="siteContent__line"></div>
+            <div class="gallery__album">
+                <div class="gallery__album-title">
+                    Альбом: Поездка в Кукшакуль 
+                    <span>
+                    (фото: 34шт.)
+                    </span>
+                </div>
+                <div class="gallery__album-wrapper">
+                    <div class="gallery__album-item">
+                        <a href="">
+                            <img src="assets/img/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="gallery__album-item">
+                        <a href="">
+                        <img src="assets/img/logo.png" alt="">
+                        </a>
+                    </div>
+
+                    
+                    
+                    <div class="gallery__album-item">
+                        <a href="">
+                            <img src="assets/img/slider/slide-3.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="gallery__album-item">
+                        <a href="">
+                        <img src="assets/img/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="gallery__album-item">
+                        <a href="">
+                            <img src="assets/img/slider/slide-1.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="gallery__album-item">
+                        <a href="">
+                        <img src="assets/img/slider/slide-2.jpg" alt="">
+                        </a>
+                    </div><div class="gallery__album-item">
+                        <a href="">
+                            <img src="assets/img/slider/slide-001.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="gallery__album-item">
+                        <a href="">
+                        <img src="assets/img/logo.png" alt="">
+                        </a>
+                    </div><div class="gallery__album-item">
+                        <a href="">
+                            <img src="assets/img/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="gallery__album-item">
+                        <a href="">
+                        <img src="assets/img/slider/slide-4.jpg" alt="">
+                        </a>
+                    </div>
 
 
+                    <div class="gallery__album-item">
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </div>
+                    <div class="gallery__album-item">
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
 
 
 

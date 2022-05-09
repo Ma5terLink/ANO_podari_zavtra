@@ -2,6 +2,7 @@
     include("path.php");
     include "app/database/db.php";
     include "app/controllers/topics.php";
+    include "app/controllers/resultsMain.php";
 ?>
 
 <!DOCTYPE html>
@@ -15,56 +16,60 @@
     <?php include("app/include/main-menu.php");
           include("app/include/asidePanel.php"); ?>
 
-        <div class="news__categories-list">
-        <h4>категории</h4>
-            <ul>
-                <?php foreach ($topicsARR as $key => $topic): ?>
-                    <?php if($topic['superSection'] === "results"): ?>
-                        <li>
-                            <a href="#"><?= $topic['name']; ?></a>
-                        </li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-
         <div class="siteContent__usefulLinks">
             <h5>Полезные ссылки</h5>
 
         </div>
-
-        </div>
+    <!-- следующий /div относится к asidePanel -->
+    </div>
             <!-- Основной контент сайта -->
             <div class="siteContent__mainWrapper">
                 <div class="siteContent__resultsWrapper">
                     <h2>наши достижения и результаты</h2>
+                    <div class="siteContent__line"></div>
 
-                    <div class="siteContent__resultsWrapper-links">
-                        Всего записей: 2, на странице: 1 - 2<br>
-                        Начало | Пред. | <span>1</span> | След. | Конец
-                    </div>
-
-                    <div class="siteContent__resultsWrapper-item">
-                        <a href="#">
-                            <img src="<?php echo BASE_URL ?>assets/img/news/dd1.jpg" alt="крайняя новость">
-                        </a>
-                        <i>29.08.2021</i>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta itaque vero, omnis doloribus nostrum, beatae amet repellendus aliquam dicta mollitia incidunt! Perspiciatis animi reiciendis vero doloribus saepe, atque totam doloremque consectetur, ducimus quos consequatur, facilis dicta facere ipsam! Saepe eveniet, enim dicta quaerat distinctio ullam incidunt sunt quae accusamus sapiente quam sequi laboriosam quis nesciunt excepturi iste quisquam aliquid vitae eos quos, maiores esse obcaecati consequuntur. Hic sapiente modi doloribus fugit rem deleniti numquam perferendis dolorum nisi. Aliquam quam modi dolores veniam, hic saepe blanditiis earum libero nihil eveniet voluptas maiores doloremque incidunt totam molestiae unde iusto in, ullam harum deserunt. Beatae quibusdam possimus rem, rerum tenetur blanditiis mollitia reprehenderit deserunt ut, voluptate at molestiae. Quia ab totam eligendi eius libero incidunt animi, atque laborum consequuntur saepe repudiandae aperiam quam! Aliquam illum obcaecati earum. Unde earum illum reprehenderit dolorum quisquam!</p>
-                    </div>
+                    <?php include "app/include/resultsSwitcher.php"; ?>
 
 
-                    <div class="siteContent__resultsWrapper-item">
-                        <a href="#">
-                            <img src="<?php echo BASE_URL ?>assets/img/news/dd2.jpg" alt="крайняя новость">
-                        </a>
-                        <i>15.08.2021</i>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque perspiciatis, quis ad quo temporibus laborum, eius totam impedit veritatis a hic atque sed magnam adipisci esse magni maxime, recusandae quam suscipit repellendus ipsam ipsa fugiat. Quasi accusantium aliquid, recusandae distinctio beatae assumenda alias nihil eum modi atque eaque dicta libero accusamus molestias consectetur nam similique. Animi necessitatibus incidunt magni velit voluptates a inventore vero. Libero reiciendis dolorum quasi possimus ducimus!</p>
-                    </div>
+                    <?php for($i = $numsResultsOnPageFirst-1; $i <= $numsResultsOnPageSec-1; $i++): ?>
+                        <div class="siteContent__resultsWrapper-item">
+                            <div>
+                                <a href="<?php echo BASE_URL ."resultSingle.php?id=".$allPublishedResults[$i]['id'];?>">
+                                    <?php if($allPublishedResults[$i]['img'] === "foto-no.svg"): ?>
+                                            <img src="<?php echo BASE_URL ."assets/icons/foto-no.svg";?>" alt="<?=$allPublishedResults[$i]['title']?>">
+                                    <?php else: ?>
+                                            <img src="<?php echo BASE_URL ."assets/img/results/".$allPublishedResults[$i]['img'];?>" alt="<?=$allPublishedNews[$i]['title']?>">
+                                    <?php endif; ?>
+                                </a>
+                            </div>
+                            <div class="gridPost">
+                                <i><?=substr($allPublishedResults[$i]['published_date'],8,2)?>-<?=substr($allPublishedResults[$i]['published_date'],5,2)?>-<?=substr($allPublishedResults[$i]['published_date'],0,4)?></i>
 
-                    <div class="siteContent__resultsWrapper-links">
-                        Всего записей: 2, на странице: 1 - 2<br>
-                        Начало | Пред. | <span>1</span> | След. | Конец
-                    </div>
+                                <i class="title" title="<?=$allPublishedResults[$i]['title'];?>">
+                                    <?php if(mb_strlen($allPublishedResults[$i]['title']) < 50) {
+                                        echo $allPublishedResults[$i]['title'];
+                                    }else{
+                                        echo mb_substr($allPublishedResults[$i]['title'],0,50)."...";
+                                    } ?>
+                                </i>
+
+                                <i>
+                                    в категории:<br>
+                                    <?php
+                                        $id_topic = ['id' => $allPublishedResults[$i]['id_topic']];
+                                        $name_topic = selectOne('topics', $id_topic);
+                                        echo "<b>". $name_topic['name'] ."</b>";
+                                    ?>
+                                </i>
+                                
+                                <p class="horizontal"><?=$allPublishedResults[$i]['short_content']?></p>
+                            </div>
+                        </div>
+                    <?php endfor; ?>
+
+
+
+                    <?php include "app/include/resultsSwitcher.php"; ?>
 
                 </div>
 

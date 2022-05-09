@@ -45,6 +45,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['topics-create'])){
         }
 }
 
+
+
+
+
+
+
+
+
 // Редактирование категории - на этапе загрузки edit.php
 if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])){
     $id=$_GET['id'];
@@ -60,6 +68,15 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])){
         $superSection = "Достижения";
     }
 }
+
+
+
+
+
+
+
+
+
 
 // Редактирование категории - действия после нажатия кнопки submit
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['topics-edit-btn'])){
@@ -96,6 +113,18 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['topics-edit-btn'])){
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Удаление категории - на этапе загрузки edit.php
 if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['del_id'])){

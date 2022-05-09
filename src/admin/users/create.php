@@ -1,6 +1,7 @@
 <?php 
     include "../../path.php";
     include "../../app/controllers/users-sec.php";
+    include "../../app/controllers/isModer.php"
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +46,9 @@
                             </select>
                         </div>
 
-                        <div class="err-msg"><?=$errMsg?></div>
+                        <div class="err-msg">
+                            <?php include "../../app/helps/errorInfo.php";?>
+                        </div>
                         <button class="admin_Btn" type="submit" name="registerForm__button">Создать</button>
                     </form>
 

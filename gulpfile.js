@@ -40,15 +40,13 @@ gulp.task('styles', function()  {
 gulp.task('watch', function()   {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel("styles"));
     gulp.watch("src/*.php").on('change', gulp.parallel('php'));
-    gulp.watch("src/app-include/*.php").on('all', gulp.parallel('php-include'));
-    gulp.watch("src/app-controllers/*").on('all', gulp.parallel('php-ctrl'));
+    gulp.watch("src/app/**/*").on('all', gulp.parallel('php-app'));
     gulp.watch("src/admin/**/*").on('all', gulp.parallel('php-admin'));
-    gulp.watch("src/database/*").on('all', gulp.parallel('to-db'));
     gulp.watch("src/*.html").on('all', gulp.parallel('html'));
-    gulp.watch("src/js/**/*.js").on('all', gulp.parallel('scripts'));
-    gulp.watch("src/fonts/**/*").on('all', gulp.parallel('fonts'));
-    gulp.watch("src/icons/**/*").on('all', gulp.parallel('icons'));
-    gulp.watch("src/img/**/*").on('all', gulp.parallel('images'));
+    gulp.watch("src/assets/js/**/*.js").on('all', gulp.parallel('scripts'));//перенос
+    gulp.watch("src/fonts/**/*").on('all', gulp.parallel('fonts'));//перенос
+    gulp.watch("src/assets/icons/**/*").on('all', gulp.parallel('icons'));//перенос
+    gulp.watch("src/assets/img/**/*").on('all', gulp.parallel('images'));//перенос
 
 });
 
@@ -57,24 +55,14 @@ gulp.task('php', function () {
         .pipe(gulp.dest("dist"));
 });
 
-gulp.task('php-include', function () {
-    return gulp.src("src/app-include/*.php")
-        .pipe(gulp.dest("dist/app/include"));
-});
-
-gulp.task('php-ctrl', function () {
-    return gulp.src("src/app-controllers/*.php")
-        .pipe(gulp.dest("dist/app/controllers"));
+gulp.task('php-app', function () {
+    return gulp.src("src/app/**/*")
+        .pipe(gulp.dest("dist/app"));
 });
 
 gulp.task('php-admin', function () {
     return gulp.src("src/admin/**/*.php")
         .pipe(gulp.dest("dist/admin"));
-});
-
-gulp.task('to-db', function () {
-    return gulp.src("src/database/*")
-        .pipe(gulp.dest("dist/app/database"));
 });
 
 gulp.task('html', function () {
@@ -84,36 +72,30 @@ gulp.task('html', function () {
     
 });
 
-gulp.task('scripts', function () {
-    return gulp.src("src/js/**/*.js")
+gulp.task('scripts', function () { //перенос 
+    return gulp.src("src/assets/js/**/*.js")
         .pipe(gulp.dest("dist/assets/js"))
         .pipe(browserSync.stream());
     
 });
 
-gulp.task('fonts', function () {
-    return gulp.src("src/fonts/**/*")
+gulp.task('fonts', function () { //перенос 
+    return gulp.src("src/assets/fonts/**/*")
         .pipe(gulp.dest("dist/assets/fonts"))
         .pipe(browserSync.stream());
 });
 
-gulp.task('icons', function () {
-    return gulp.src("src/icons/**/*")
+gulp.task('icons', function () { //перенос 
+    return gulp.src("src/assets/icons/**/*")
         .pipe(gulp.dest("dist/assets/icons"))
         .pipe(browserSync.stream());
 });
 
-gulp.task('mailer', function () {
-    return gulp.src("src/mailer/**/*")
-        .pipe(gulp.dest("dist/app/mailer"))
-        .pipe(browserSync.stream());
-});
-
-gulp.task('images', function () {
-    return gulp.src("src/img/**/*")
+gulp.task('images', function () { //перенос 
+    return gulp.src("src/assets/img/**/*")
         .pipe(imagemin()) 
         .pipe(gulp.dest("dist/assets/img"))
         .pipe(browserSync.stream());
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'php', 'php-admin', 'php-include', 'php-ctrl', 'to-db', 'html', 'scripts', 'fonts', 'icons', 'mailer', 'images'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'php', 'php-app', 'php-admin', 'html', 'scripts', 'fonts', 'icons', 'images'));

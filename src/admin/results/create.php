@@ -22,10 +22,14 @@
             <h2>Добавление достижения</h2>
             <div class="postsGrid">
                 <div class="newsGrid__column">
-                    <form action="create.php" method="post">
+                    <form action="create.php" method="post" enctype="multipart/form-data">
                         <div class="nTitle">
                             <label for="results-title">Название достижения:</label>
                             <input required type="text" value="<?=$title?>" name="results-title" id="results-title" placeholder="Введите название новости\акции (не менее 7 символов)">
+                        </div>
+                        <div class="nShort-Content">
+                            <label for="results-short-content">Короткое содержание новости\акции:</label>
+                            <textarea placeholder="Добавьте короткое описание статьи..." name="results-short-content" id="results-short-content" cols="105" rows="5"><?=$short_content;?></textarea>
                         </div>
                         <div class="nContent">
                             <label for="editor">Содержание достижения:</label>
@@ -35,10 +39,6 @@
                             <div>
                                 <div class="nImg">
                                     <img src="<?php echo BASE_URL."assets/icons/foto-no.svg"?>" alt="nImg">
-                                </div>
-                                <div class="nFile">
-                                    <input type="file" id="i-gFile" name="results-titleImgFile">
-                                    <label for="i-gFile"></label>
                                 </div>
                             </div>
                             <div class="nCat">
@@ -52,7 +52,13 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="err-msg"><?=$errMsg?></div>
+                        <div class="nFile">
+                            <input type="file" id="i-gFile" name="results-titleImgFile" accept=".png,.jpg,.jpeg,.svg,.bmp,.ico">
+                            <label for="i-gFile"></label>
+                        </div>
+                        <div class="err-msg">
+                            <?php include "../../app/helps/errorInfo.php";?>
+                        </div>
                         <button class="admin_Btn" type="submit" name="results-saveBtn">Сохранить запись</button>
                     </form>
 

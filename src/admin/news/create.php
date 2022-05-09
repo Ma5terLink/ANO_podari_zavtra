@@ -1,6 +1,7 @@
 <?php 
     include("../../path.php");
     include "../../app/controllers/news.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +23,15 @@
             <h2>Добавление новости</h2>
             <div class="postsGrid">
                 <div class="newsGrid__column">
-                    <form action="create.php" method="post">
+                    <form action="create.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="400000">
                         <div class="nTitle">
                             <label for="news-title">Название новости\акции:</label>
                             <input required value="<?=$title;?>" type="text" name="news-title" id="news-title" placeholder="Введите название новости\акции (не менее 7 символов)">
+                        </div>
+                        <div class="nShort-Content">
+                            <label for="news-short-content">Короткое содержание новости\акции:</label>
+                            <textarea placeholder="Добавьте короткое описание статьи..." name="news-short-content" id="news-short-content" cols="105" rows="5"><?=$short_content;?></textarea>
                         </div>
                         <div class="nContent">
                             <label for="news-content">Содержание новости\акции:</label>
@@ -35,10 +41,6 @@
                             <div>
                                 <div class="nImg">
                                     <img src="<?php echo BASE_URL."assets/icons/foto-no.svg"?>" alt="nImg">
-                                </div>
-                                <div class="nFile">
-                                    <input type="file" id="i-gFile" name="news-titleImgFile">
-                                    <label for="i-gFile"></label>
                                 </div>
                             </div>
                             <div class="nCat">
@@ -51,8 +53,17 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
+                            
+                            
                         </div>
-                        <div class="err-msg"><?=$errMsg?></div>
+
+                        <div class="nFile">
+                            <input type="file" id="i-gFile" name="news-titleImgFile" accept=".png,.jpg,.jpeg,.svg,.bmp,.ico">
+                            <label for="i-gFile"></label>
+                        </div>
+                        <div class="err-msg">
+                            <?php include "../../app/helps/errorinfo.php";?>
+                        </div>
                         <button class="admin_Btn" type="submit" name="news-saveBtn">Сохранить запись</button>
                     </form>
 

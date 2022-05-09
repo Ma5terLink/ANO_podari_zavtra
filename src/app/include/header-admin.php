@@ -26,7 +26,7 @@
 </head>
 <body>
 
-<?php if (!$_SESSION['admin']) header('location: '.BASE_URL); ?>
+<?php if (!$_SESSION['admin'] && !$_SESSION['moder']) header('location: '.BASE_URL); ?>
 
 <header class="header">
         <div class="logo">
@@ -53,7 +53,14 @@
     <!-- Админ-строка -->
     <nav class="adminString">
         <ul>
-            <li>Пользователь: <b><?php echo $_SESSION['login'] ?></b></li>
+            <li>Пользователь: <b><?php echo $_SESSION['login'] ?></b>, роль: <b> 
+                <?php
+                    if($_SESSION['admin']) {
+                        echo "админ";
+                    }elseif($_SESSION['moder']) {
+                        echo "модератор";
+                    }
+                ?></b>.</li>
             <li><b>-== АДМИНИСТРАТИВНАЯ ПАНЕЛЬ ==-</b></li>
             <li>
                 <a href="<?php echo BASE_URL ?>"><b>Главная</b></a>

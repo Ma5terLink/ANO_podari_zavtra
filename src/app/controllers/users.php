@@ -1,5 +1,8 @@
+<!-- Данный файл - контроллер регистрации и авторизации со страниц reg и log. Не для работы через админку. -->
 <?php
-    include "../../app/database/db.php";
+    include "app/database/db.php";
+
+// echo "users control";    
 
 $errMsg='';
 $warARR=[];
@@ -8,12 +11,17 @@ function logUser($arr){
     $_SESSION['id'] = $arr['id'];
     $_SESSION['login'] = $arr['username'];
     $_SESSION['admin'] = $arr['admin'];
+    $_SESSION['moder'] = $arr['moderator'];
+    $_SESSION['ban'] = $arr['banned'];
+    $_SESSION['news_page'] = 1;
+    $_SESSION['results_page'] = 1;
     header('location: '.BASE_URL);
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registerForm__button'])){
     
     $admin = 0;
+    $moderator = 0;
     $login = trim($_POST['reg_login']);
     $email = trim($_POST['reg_email']);
     $passF = trim($_POST['reg_passF']);
@@ -35,6 +43,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registerForm__button']
             $pass = password_hash($_POST['reg_passF'], PASSWORD_DEFAULT);
             $post = [
                 'admin' => $admin,
+                'moderator' => $moderator,
                 'username' => $login,
                 'email' => $email,
                 'password' => $pass

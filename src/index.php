@@ -1,6 +1,7 @@
 <?php
     include "path.php";
     include "app/database/db.php";
+    include "app/controllers/getPublishedARR.php";
 ?>
 
 <!DOCTYPE html>
@@ -94,13 +95,23 @@
 
         <!-- Блок крайнего достижения -->
         <div class="siteContent__latestResult">
-            <h4>Крайний результат :)</h4>
-            <h5>26.01.2022</h5>
-            <a href="#">
-                <img src="<?php echo BASE_URL ?>assets/img/news/dd1.jpg">
+            <h4>Крайнее достижение</h4>
+            <h5>
+                <?php
+                    echo (substr($indexResult['published_date'],8,2) .".". substr($indexResult['published_date'],5,2) .".". substr($indexResult['published_date'],0,4));
+                ?>
+            </h5>
+            <a href="result.php?id=<?=$indexResult['id']?>">
+                <img src="<?php echo BASE_URL."assets/img/results/".$indexResult['img'];?>">
             </a>
-            <i>Ольга Сенникова</i>
-            <p>Выражаем огромную благодарность центру Rehab за помощь нашим деткам!!! Мы с Рафаэлем посещаем этот центр с 2015 года!!! Мы просто безума от всех кто работает в этом центре! Все очень приветливые и заботливые, приятная, добрая атмосфера! ! Ребенку нравиться заниматься ЛФК потому что занятия проходят на плавной и размеренной ноте! Созданы все условия для эффективных занятий! Проходя курсы реабилитации в центре Рехаб у нас появляются положительные результаты! Огромное спасибо массажисту Наилю после его массажа ребенок успокаивается и снимается тонус! ЛФК всегда проходит так что бы ребенок не капризничал и делал все до максимально возможности! Спасибо вам! Мы будем ходить к вам снова и снова!</p>
+            <i>
+                <?php 
+                    $name_author = ['id' => $indexResult['id_user']];
+                    $autor_topic = selectOne('users', $name_author);
+                    echo $autor_topic['username'];
+                ?>
+            </i>
+            <p><?=$indexResult['short_content'];?></p>
             <a href="<?php echo BASE_URL .'results.php'?>">Все результаты</a>
         </div>
         <div class="siteContent__usefulLinks">
@@ -114,33 +125,29 @@
                 <!-- Новостной блок - последние три новости -->
                 <div class="siteContent__shortNewsBlock">
                     <h2>Наши новости и акции</h2>
+                    <div class="siteContent__line"></div>
                     <div class="siteContent__shortNewsBlock-wrapper">
+                    <?php foreach($indexNews as $key => $item): ?>
                         <div class="siteContent__shortNewsBlock-item">
-                            <a href="#">
-                                <img src="<?php echo BASE_URL ?>assets/img/news/n1.jpg" alt="Тут какое-то описание">
-                            </a>
-                            <h5>15.08.2021</h5>
-                            <h4>Мы работаем с сертификатами на реабилитацию детей-инвалидов‼</h4>
-                            <p>Размер финансирового обеспечения одного сертификата составляет 41,7 тысячи рублей. Его можно использовать в течение двух месяцев со дня выдачи. Рассчитывать на финансовую поддержку могут дети, которые не проходили реабилитацию в государственных учреждениях в течение года.</p>
+                        <a href="news.php?id=<?=$item['id']?>">
+                            <img src="<?php echo BASE_URL."assets/img/news/".$item['img'];?>" alt="">
+                        </a>
+                            <h5>
+                                <?php
+                                echo (substr($item['published_date'],8,2) .".". substr($item['published_date'],5,2) .".". substr($item['published_date'],0,4));
+                                ?>
+                            </h5>
+                            <h4>
+                                <a href="<?php echo BASE_URL."assets/img/news/".$item['img'];?>">
+                                    <?=$item['title']?>
+                                </a>
+                            </h4>
+                            <p><?=$item['short_content'];?></p>
                         </div>
-                        <div class="siteContent__shortNewsBlock-item">
-                            <a href="#">
-                                <img src="<?php echo BASE_URL ?>assets/img/news/n2.jpg" alt="Тут какое-то описание">
-                            </a>
-                            <h5>05.08.2021</h5>
-                            <h4>МСЭ</h4>
-                            <p>В нашем центре Вы можете получить заключение логопеда и психолога для прохождения медико-социальной экспертизы(МСЭ).</p>
-                        </div>
-                        <div class="siteContent__shortNewsBlock-item">
-                            <a href="#">
-                                <img src="<?php echo BASE_URL ?>assets/img/news/n3.jpg" alt="Тут какое-то описание">
-                            </a>
-                            <h5>01.06.2021</h5>
-                            <h4>Сертификаты на реабилитацию детей--инвалидов</h4>
-                            <p>Постановление Правительства Республики Башкортостан от 05 августа 2019 года №484 «Об утверждении Порядка выдачи и реализации сертификата на реабилитацию ребенка-инвалида, Формы сертификата на реабилитацию ребенка-инвалида и Порядка предоставления субсидий юридическим лицам, не являющимся государственными (муниципальными) организациями, на возмещение затрат по обеспечению детей-инвалидов реабилитационными услугами». https://npa.bashkortostan.ru/24806/</p>
-                        </div>
+                    <?php endforeach; ?>
                     </div>
-                    <a href="#">Все новости и акции</a>
+
+                    <a href="newsPromos.php">Все новости и акции</a>
                 </div>
 
                 <div class="siteContent__line"></div>

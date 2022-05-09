@@ -54,7 +54,7 @@
                         <div class="rowT-publishingStatus">
                             <?php
                                 if ($news['published']) {
-                                    echo "Опубликовано";
+                                    echo "Опубликовано"."<br><b>".$news['published_date'] ."</b>";
                                 }else{
                                     echo "Не опубликовано";
                                 }

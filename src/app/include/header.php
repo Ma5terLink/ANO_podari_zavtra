@@ -24,6 +24,8 @@
 </head>
 <body>
 
+<?php if($_SESSION['ban']==="1") header("location:".BASE_URL."logout.php");?>
+
 <header class="header">
         <div class="social">
             <div class="social__item">
@@ -55,14 +57,23 @@
             <input type="text" name="mainSearch" placeholder="Поиск по сайту">
             <input type="submit" value="">
         </form>
-            <div class="login00">
-            <a href="<?php echo BASE_URL ?>log.php">
-                <img src="<?php echo BASE_URL ?>assets/icons/login.svg" alt="">
-            </a>    
-        </div>
+            <?php if(!isset($_SESSION['id'])): ?>
+                <div class="login00">
+                    <a href="<?php echo BASE_URL ?>log.php">
+                        <img src="<?php echo BASE_URL ?>assets/icons/login.svg" alt="">Вход
+                    </a>    
+                </div>
+            <?php endif; ?>
+            <?php if(isset($_SESSION['id'])): ?>
+                <div class="user"><?=$_SESSION['login'];?></div>
+                <div class="logout00">
+                    <a title="<?=$_SESSION['login'];?>" href="<?php echo BASE_URL ?>logout.php">
+                        <img src="<?php echo BASE_URL ?>assets/icons/logout.svg" alt="">Выход
+                    </a>    
+                </div>
+            <?php endif; ?>
         <!-- Код будет выполнен, если в супермассиве SESSION, будет какой-то id -->
-            <?php if ($_SESSION['admin']): ?>
-                <!-- <?=tt($_SESSION);?> -->
+            <?php if ($_SESSION['admin'] || $_SESSION['moder']): ?>
                 <div class="admin_star">
                     <a href="<?php echo BASE_URL ?>admin/news/index.php">
                         <img src="<?php echo BASE_URL ?>assets/img/admin_star.png"> 

@@ -18,7 +18,7 @@
                 height: 210px;
                 border: 1px solid black;
                 border-radius: 10px;
-                object-fit: contain;
+                object-fit: cover;
                 &:hover {
                     box-shadow: 2px 2px 5px var(--color-black);
                 }
@@ -29,23 +29,25 @@
                 margin-left: 5px;
                 font-size: 14px;
                 color: var(--color-main);
+                padding-left: 5px;
                 &.title {
                     position: relative;
                     font-size: 16px;
                     top: -2px;
                     color: var(--color-secondary);
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    line-height: 17px;
                 }
             }
             p {
-              position: absolute;
-              top: 30px;
-              left: 215px;
               margin: 0;
               font-size: 14px;
               width: 603px;
               max-height: 176.4px;
               text-align: justify;
               text-indent: 1rem;
+              padding-left: 10px;
             }
         }
     }
@@ -77,6 +79,19 @@
                 }
             }
         }
+    }
+
+}
+
+.gridPost {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 90px auto 161px;
+    grid-template-rows: 45px auto;
+    gap: 5px 0;
+    .horizontal {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
     }
 
 }

@@ -1,6 +1,15 @@
 # ANO_podari_zavtra
 Коммерческий проект для центра реабилитации.
 
+
+
+
+=06= (10-05-2022) МСК+2
+- После ремонта компа закончены страницы, выводящие из БД новости и достижения. Закончена часть админки, относящейся к выбору 
+терапий, настройке горячих кнопок здоровья. Мелкие доработки.
+- After the repair of the computer, the pages that output news and achievements from the database are finished. The part of the admin panel related to the choice of therapy, setting up hot health buttons has been completed. Minor improvements.
+
+
 =05= (28-04-2022) МСК+2
 - Реализована работа основных разделов админки. Добавление, удаление, публикация постов, категорий постов и пользователей.
 - Implemented the work of the main sections of the admin panel. Adding, deleting, publishing posts, categories of posts and users.

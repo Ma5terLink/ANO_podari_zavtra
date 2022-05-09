@@ -1,6 +1,8 @@
 <?php 
     include "../../path.php";
     include "../../app/controllers/users-sec.php";
+    include "../../app/controllers/isModer.php"
+
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +28,8 @@
                     <div class="rowT-title"><b>Логин</b></div>
                     <div class="rowT-email"><b>E-mail</b></div>
                     <div class="rowT-role"><b>Роль</b></div>
+                    <div class="rowT-comment"><b>Комменты</b></div>
+                    <div class="rowT-ban"><b>Бан</b></div>
                     <div class="rowT-editorBtn"><b>Редактирование</b></div>
                 </div>
                 <?php foreach ($usersARR as $key => $users): ?>
@@ -36,13 +40,21 @@
                             <div class="rowT-role">
                                 <?php
                                     if ($users['admin']) {
-                                        echo "Администратор";
+                                        echo "<b>Администратор</b>";
                                     }elseif($users['moderator']) {
-                                        echo "Модератор";
+                                        echo "<b>Модератор</b>";
                                     }else{
                                         echo "Пользователь";
                                     }
                                 ?>
+                            </div>
+                            <div class="rowT-comment"><?=$users['comment']?></div>
+                            <div class="rowT-ban">
+                                <?php if($users['banned']): ?>
+                                    <a href="edit.php?ban_id=<?=$users['id'];?>"><img title="Забанен" src="<?=BASE_URL."assets/icons/banned-2.svg";?>" alt=""></a>
+                                <?php else: ?>
+                                    <a href="edit.php?ban_id=<?=$users['id'];?>"><img src="<?=BASE_URL."assets/icons/notbanned.svg";?>" alt=""></a>
+                                <?php endif; ?>
                             </div>
                             <div class="rowT-editorBtn">
                                 <div class="editIcons"><a href="edit.php?id=<?=$users['id'];?>"><img title="Редактировать" src="../../assets/icons/edit-3.svg"></a></div>

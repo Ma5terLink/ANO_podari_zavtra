@@ -2,12 +2,13 @@
     session_start();
     require("connect.php");
 
-// echo "DB: Test string";
+// echo "DB:Online<br>";
 
 function tt($value) {
     echo '<pre>';
     print_r($value);
     echo '</pre>';
+    exit();
 }
 
 
@@ -254,6 +255,8 @@ function delete($table, $params=[], $withID=true) {
 
 
 
+
+
 // ЗОНА ТЕСТИРОВАНИЯ (ИСПОЛНЕНИЯ) - МОЖНО УДАЛИТЬ ПОСЛЕ
 // Добавление строки записи в таблицу БД
 // $params = [
@@ -264,3 +267,35 @@ function delete($table, $params=[], $withID=true) {
 // ];
 // $data = insert("users", $params);
 // echo $data;
+
+
+
+
+
+
+
+
+
+
+
+// Ф-я возвращает массив идентификаторов опубликованных записей (published)
+// из указанной таблицы базы данных, в обратном порядке (более свежие сверху)
+function getArrayofIdPublishedPosts($table) {
+    $tempARR=[];
+    $resARR=[];
+    
+    $ARRfirst = selectAll($table, ['published' => '1']);
+    foreach ($ARRfirst as $key => $item) {
+        array_push($tempARR, strtotime($item['published_date']));
+    }
+    rsort($tempARR);
+    foreach ($tempARR as $key => $val) {
+        foreach ($ARRfirst as $key2 => $val2) {
+            $temp = strtotime($val2['published_date']);
+            if ($temp === $val) {
+                array_push($resARR, $val2['id']);
+            }
+        }
+    }
+    return $resARR;
+}

@@ -28,6 +28,7 @@
     --color-main: #532072;
     --color-secondary: #B81F6F;
     --color-borders: #D3D7CF;
+    --color-green: #008000;
 }
 
 a {
@@ -54,6 +55,8 @@ h1, h2, h3, h4, h5, h6 {
 @import 'blocks/aboutUs';
 @import 'blocks/newsPromos';
 @import 'blocks/contacts';
+@import 'blocks/problems';
+@import 'blocks/gallery';
 @import 'blocks/footer';
 
 

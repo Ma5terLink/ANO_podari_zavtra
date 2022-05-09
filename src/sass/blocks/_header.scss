@@ -141,9 +141,20 @@
     }
 
 }
-.login00 {
+.login00, .logout00 {
     display: block;
     position: absolute;
     top: 75px;
-    right: 288px;
+    right: 260px;
+}
+.user {
+    display: inline;
+    position: absolute;
+    width: 140px;
+    font-size: 12px;
+    font-style: italic;
+    top: 53px;
+    right: 261px;
+    color: var(--color-grey);
+    text-align: end;
 }

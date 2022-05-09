@@ -1,0 +1,15 @@
+.problems__descr {
+    display: block;
+    text-indent: 1rem;
+    text-align: justify;
+}
+.problems__text {
+    margin: 20px 0 10px 0;
+    text-indent: 1rem;
+}
+.problems__link {
+    margin-left: 20px;
+    a {
+        color: var(--color-green);
+    }
+}   

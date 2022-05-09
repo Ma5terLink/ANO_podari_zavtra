@@ -110,9 +110,15 @@
                 display: block;
                 margin: 0 auto;
                 margin-top: 5px;
-                border: 1px solid black;
+                border: 1px solid transparent;
+                width: 200px;
+                height: 266px;
+                border-radius: 10px;
+                // object-fit: contain;
+                box-shadow: 0px 2px 5px var(--color-black);
                 &:hover {
-                    box-shadow: 2px 2px 5px var(--color-black);
+                    border: 1px solid #D3D7CF;
+                    box-shadow: 0px 2px 15px var(--color-black);
                 }
             }
         }
@@ -172,16 +178,17 @@
     // КЛАССЫ ДЛЯ "КОРОТКОГО НОВОСТНОГО БЛОКА"
     &__shortNewsBlock {
         &-wrapper {
-            width: 809px;            
+            width: 100%;            
             display: flex;
             flex-wrap: wrap;
             justify-content: baseline;
         }
         &-item {
-            width: 269px;
+            width: 253px;
             border: 1px solid #D3D7CF;
             border-radius: 10px;
             padding: 10px 20px;
+            margin-right: 16px;
             a {
                 text-decoration: underline;
                 img {
@@ -189,13 +196,13 @@
                     margin: 5px auto;
                     height: 212px;
                     width: 212px;
-                    object-fit: contain;
+                    // object-fit: contain;
                     border: 1px solid transparent;
                     border-radius: 10px;
-                    // box-shadow: 0px 2px 5px var(--color-black);
+                    box-shadow: 0px 2px 5px var(--color-black);
                     &:hover {
                         border: 1px solid #D3D7CF;
-                        box-shadow: 0px 2px 5px var(--color-black);
+                        box-shadow: 0px 2px 15px var(--color-black);
                     }
                 }
             }
@@ -207,10 +214,11 @@
             h4 {
                 margin-bottom: 10px;
                 font-size: 22px;
+                font-weight: bold;
                 text-transform: uppercase;
                 color: var(--color-main);
                 // text-shadow: 2px 2px 5px var(--color-main);
-                text-decoration: underline;
+                // text-decoration: underline;
             }
             p {
                 color: gray;
@@ -306,6 +314,9 @@
                 border: 1px solid gray;
                 border-radius: 15px;
                 &:hover {
+                    background-color: yellow;
+                }
+                &.active {
                     background-color: yellow;
                 }
             }
