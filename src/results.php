@@ -34,7 +34,7 @@
                     <?php for($i = $numsResultsOnPageFirst-1; $i <= $numsResultsOnPageSec-1; $i++): ?>
                         <div class="siteContent__resultsWrapper-item">
                             <div>
-                                <a href="<?php echo BASE_URL ."resultSingle.php?id=".$allPublishedResults[$i]['id'];?>">
+                                <a href="<?php echo BASE_URL ."Single.php?rPost=".$allPublishedResults[$i]['id'];?>">
                                     <?php if($allPublishedResults[$i]['img'] === "foto-no.svg"): ?>
                                             <img src="<?php echo BASE_URL ."assets/icons/foto-no.svg";?>" alt="<?=$allPublishedResults[$i]['title']?>">
                                     <?php else: ?>

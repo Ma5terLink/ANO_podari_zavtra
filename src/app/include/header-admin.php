@@ -29,43 +29,55 @@
 <?php if (!$_SESSION['admin'] && !$_SESSION['moder']) header('location: '.BASE_URL); ?>
 
 <header class="header">
-        <div class="logo">
-            <a href="<?php echo BASE_URL ?>">
-                <img src="<?php echo BASE_URL ?>assets/img/logo.png" alt="">
+    <div class="social">
+        <div class="social__item">
+            <a href="https://vk.com/ano_podari_zavtra" target="_blank" title="Мы в ВК">
+                <img src="<?php echo BASE_URL ?>assets/img/social/vk.svg">
             </a>
         </div>
-        <div class="hText">
-            <div class="hText__name">Автономная некоммерческая организация содействия реабилитации лиц с ограниченными возможностями здоровья
-            "Подари завтра"
-            </div>
-            <div class="hText__address">
-                453214, Республика Башкортостан, г.Ишимбай, ул. Ленина, 56<br>
-                Пн-Пт.: с 10:00 - 20:00 (без перерыва)
-            </div>
+        <div class="social__item">
+            <a href="https://instagram.com/ano_podari_zavtra" target="_blank" title="Мы в Instagram">
+                <img src="<?php echo BASE_URL ?>assets/img/social/instagram.svg">
+            </a>
         </div>
-        <div class="admin_star">
-            <!-- <a href="<?php echo BASE_URL ?>admin/admin.php"> -->
-            <img src="<?php echo BASE_URL ?>assets/img/admin_star.png"> 
-            <!-- </a> -->
+    </div>
+    <div class="logo">
+        <a href="<?php echo BASE_URL ?>">
+            <img src="<?php echo BASE_URL ?>assets/img/logo.png" alt="">
+        </a>
+    </div>
+    <div class="hText">
+        <div class="hText__name">Автономная некоммерческая организация содействия реабилитации лиц с ограниченными возможностями здоровья
+        "Подари завтра"
         </div>
-    </header>
+        <div class="hText__address">
+            453214, Республика Башкортостан, г.Ишимбай, ул. Ленина, 56<br>
+            Пн-Пт.: с 10:00 - 20:00 (без перерыва)
+        </div>
+    </div>
+    <div class="admin_star">
+        <!-- <a href="<?php echo BASE_URL ?>admin/admin.php"> -->
+        <img src="<?php echo BASE_URL ?>assets/img/admin_star.png"> 
+        <!-- </a> -->
+    </div>
+</header>
 
-    <!-- Админ-строка -->
-    <nav class="adminString">
-        <ul>
-            <li>Пользователь: <b><?php echo $_SESSION['login'] ?></b>, роль: <b> 
-                <?php
-                    if($_SESSION['admin']) {
-                        echo "админ";
-                    }elseif($_SESSION['moder']) {
-                        echo "модератор";
-                    }
-                ?></b>.</li>
-            <li><b>-== АДМИНИСТРАТИВНАЯ ПАНЕЛЬ ==-</b></li>
-            <li>
-                <a href="<?php echo BASE_URL ?>"><b>Главная</b></a>
-                /
-                <a href="<?php echo BASE_URL ?>logout.php"><b>Выход</b></a>
-            </li>
-        </ul>
-    </nav>
+<!-- Админ-строка -->
+<nav class="adminString">
+    <ul>
+        <li>Пользователь: <b><?php echo $_SESSION['login'] ?></b>, роль: <b> 
+            <?php
+                if($_SESSION['admin']) {
+                    echo "админ";
+                }elseif($_SESSION['moder']) {
+                    echo "модератор";
+                }
+            ?></b>.</li>
+        <li><b>-== АДМИНИСТРАТИВНАЯ ПАНЕЛЬ ==-</b></li>
+        <li>
+            <a href="<?php echo BASE_URL ?>"><b>Главная</b></a>
+            /
+            <a href="<?php echo BASE_URL ?>logout.php"><b>Выход</b></a>
+        </li>
+    </ul>
+</nav>

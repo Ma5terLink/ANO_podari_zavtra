@@ -16,6 +16,9 @@
         <li>
             <a href="<?php echo BASE_URL ?>admin/linksHealth/index.php" title="Кнопки, расположенные внизу страниц, ведущие на страничку описания выбранной болезни.">"Кнопки здоровья"</a>
         </li>
+        <li>
+            <a href="<?php echo BASE_URL ?>admin/photoAlbums/index.php" title="Настройка и создание фотоальбомов.">Фотоальбомы</a>
+        </li>
         <?php if($_SESSION['admin']==='1' && $_SESSION['moder']==='0'): ?>
             <li>
                 <a href="<?php echo BASE_URL ?>admin/users/index.php" title="Просмотр и управление пользователями. Доступно ТОЛЬКО администраторам.">Пользователи</a>

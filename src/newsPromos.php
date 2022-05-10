@@ -38,7 +38,7 @@
                 <?php for($i = $numsNewsOnPageFirst-1; $i <= $numsNewsOnPageSec-1; $i++): ?>
                     <div class="siteContent__newsPromos-item">
                         <div>
-                            <a href="<?php echo BASE_URL ."newsSingle.php?id=".$allPublishedNews[$i]['id'];?>">
+                            <a href="<?php echo BASE_URL ."Single.php?nPost=".$allPublishedNews[$i]['id'];?>">
                                 <?php if($allPublishedNews[$i]['img'] === "foto-no.svg"): ?>
                                         <img src="<?php echo BASE_URL ."assets/icons/foto-no.svg";?>" alt="<?=$allPublishedNews[$i]['title']?>">
                                 <?php else: ?>
