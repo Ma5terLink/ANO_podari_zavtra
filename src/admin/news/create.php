@@ -40,7 +40,7 @@
                         <div class="nBottom">
                             <div>
                                 <div class="nImg">
-                                    <img src="<?php echo BASE_URL."assets/icons/foto-no.svg"?>" alt="nImg">
+                                    <img id="previewIMG" src="<?php echo BASE_URL."assets/icons/foto-no.svg"?>" alt="nImg">
                                 </div>
                             </div>
                             <div class="nCat">
@@ -58,8 +58,8 @@
                         </div>
 
                         <div class="nFile">
-                            <input type="file" id="i-gFile" name="news-titleImgFile" accept=".png,.jpg,.jpeg,.svg,.bmp,.ico">
-                            <label for="i-gFile"></label>
+                            <input type="file" id="titleImgFile" name="news-titleImgFile" accept=".png,.jpg,.jpeg,.svg,.bmp,.ico">
+                            <label for="titleImgFile"></label>
                         </div>
                         <div class="err-msg">
                             <?php include "../../app/helps/errorinfo.php";?>
@@ -80,5 +80,6 @@
     <script src="../../assets/js/scripts.js"></script> -->
     <script src="../../assets/js/ckeditor.js"></script>
     <script src="../../assets/js/scripts.js"></script>
+    <script src="../../assets/js/script2.js"></script>
 </body>
 </html>

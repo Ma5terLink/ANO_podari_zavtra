@@ -44,7 +44,7 @@
                         <div class="nBottom">
                             <div class="nImg">
                                 <?php if($img != 'foto-no.svg'): ?>
-                                        <img src="<?php echo BASE_URL."assets/img/news/".$img?>" alt="nImg">
+                                        <img id="previewIMG" src="<?php echo BASE_URL."assets/img/news/".$img?>" alt="nImg">
                                     <?php else: ?>
                                         <img src="<?php echo BASE_URL."assets/icons/foto-no.svg"?>" alt="nImg">
                                 <?php endif; ?>
@@ -102,12 +102,12 @@
                             </div>
                         </div> <!-- nBottom -->
                         <div class="nFile">
-                            <input value="<?=$img?>" type="file" id="i-gFile" name="news-titleImgFile" accept=".png,.jpg,.jpeg,.svg,.bmp,.ico">
+                            <input value="<?=$img?>" type="file" id="titleImgFile" name="news-titleImgFile" accept=".png,.jpg,.jpeg,.svg,.bmp,.ico">
                             <input type="hidden" value="<?=$img?>" name="fileInDB">
                             <?php if($img === "foto-no.svg"): ?>
-                                    <label for="i-gFile">В БД нет привязанного изображения. Используется "заглушка".</label>
+                                    <label for="titleImgFile">В БД нет привязанного изображения. Используется "заглушка".</label>
                                 <?php else: ?>
-                                    <label for="i-gFile">Используется ранее загруженное изображение.</label>
+                                    <label for="titleImgFile">Используется ранее загруженное изображение.</label>
                             <?php endif; ?>
                         </div>
                      
@@ -130,5 +130,6 @@
     <script src="../../assets/js/scripts.js"></script> -->
     <script src="../../assets/js/ckeditor.js"></script>
     <script src="../../assets/js/scripts.js"></script>
+    <script src="../../assets/js/script2.js"></script>
 </body>
 </html>

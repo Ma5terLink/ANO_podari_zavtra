@@ -2,6 +2,11 @@
 Коммерческий проект для центра реабилитации.
 
 
+=08-1= (11-05-2022) МСК+2
+- В админке добавлен предпросмотр загружаемых картинок для новостей и достижений.
+- A preview of uploaded images for news and achievements has been added to the admin panel.
+
+
 =08= (11-05-2022) МСК+2
 - Добавлен модуль админки для добавления(редактирования, удаления) непосредственно самих фотографий на сайт. Сортировка в модуле по привязанным фотоальбомам. Предпросмотр миниатюр фото предназначенного к загрузке на сайт.
 - Added an admin panel module for adding (editing, deleting) the photos themselves directly to the site. Sorting in the module by linked photo albums. Preview of thumbnails of a photo intended for uploading to the site.
