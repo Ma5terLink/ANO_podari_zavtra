@@ -35,7 +35,7 @@
                 <!-- Выводим список статей -->
                 <?php foreach ($albumsARR as $key => $albums): ?>
                     <div class="row">
-                    <div class="rowT-id"><?=$lialbumsnk['id']?></div>
+                    <div class="rowT-id"><?=$albums['id']?></div>
                         <div class="rowT-title"><?=$albums['title']?></div>
                         <div class="rowT-descr"><?=$albums['description']?></div>
                         <div class="rowT-superSection"><?=$albums['id_album']?></div>

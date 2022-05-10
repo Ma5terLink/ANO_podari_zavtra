@@ -2,7 +2,6 @@
     include "../../app/database/db.php";
 
 $albumsARR = selectAll('photo_albums');
-$filesPhotosARR = selectAll('photo_files');
 
 $errMsg=[];
 $title="";

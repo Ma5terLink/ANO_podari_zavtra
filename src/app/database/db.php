@@ -11,6 +11,12 @@ function tt($value) {
     exit();
 }
 
+function tt2($value) {
+    echo '<pre>';
+    print_r($value);
+    echo '</pre>';
+}
+
 
 // Проверяем выполнение запроса к БД (получаем либо ошибку с остановкой, либо TRUE - если ошибки нет)
 function dbCheckError($query) {

@@ -2,9 +2,15 @@
 Коммерческий проект для центра реабилитации.
 
 
+=08= (11-05-2022) МСК+2
+- Добавлен модуль админки для добавления(редактирования, удаления) непосредственно самих фотографий на сайт. Сортировка в модуле по привязанным фотоальбомам. Предпросмотр миниатюр фото предназначенного к загрузке на сайт.
+- Added an admin panel module for adding (editing, deleting) the photos themselves directly to the site. Sorting in the module by linked photo albums. Preview of thumbnails of a photo intended for uploading to the site.
+
+
 =07= (10-05-2022) МСК-2
 - Добавлен модуль админки для создания и редактирования самих(!) фотоальбомов. Каждому фотоальбому привязывается свой идентификатор, по которому впоследствии опознаются фотографии предназначенные для данного альбома.
 - Added an admin panel module for creating and editing the (!) photo albums themselves. Each photo album is assigned its own identifier, by which the photos intended for this album are subsequently identified.
+
 
 =06= (10-05-2022) МСК+2
 - После ремонта компа закончены страницы, выводящие из БД новости и достижения. Закончена часть админки, относящейся к выбору 
